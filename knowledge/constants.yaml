@@ -1,0 +1,89 @@
+# Northlake Bank (fictional) - Deal Pricing & RAROC constants
+# SINGLE SOURCE for every number used by:
+#   - the policy documents (knowledge/*.docx)
+#   - raroc_reference.py and its tests
+#   - the Price Deal flow build guide (flows/price_deal_build_guide.md)
+# Synthetic. For demonstration only. Not TD or any real bank's parameters.
+
+version: "2026.11-v1"
+effective_date: "2026-11-22"
+currency: USD            # all amounts in USD; spreads quoted over Term SOFR
+
+# --- Hurdle and approval thresholds (Approval Matrix section 1, RAROC Methodology section 6)
+hurdle: 0.15             # deal RAROC at or above this -> approved (if no policy exception)
+committee_floor: 0.12    # deal RAROC below this -> pricing committee
+
+# --- RAROC inputs (RAROC Methodology section 3)
+cost_ratio: 0.40         # operating cost allocated as a share of revenue
+utilisation:
+  revolver: 0.50         # RM 3.4
+  term_loan: 1.00        # RM 3.5
+default_commit_fee_bp: 25  # LPP 4.2, charged on the undrawn amount
+
+# --- Rating tables (RAROC Methodology 4.1). Rating 1 = strongest, 10 = weakest.
+#     capital_rate = allocated capital as a share of the commitment
+#     el_rate      = annual expected loss (PD x LGD) as a share of the drawn amount
+ratings:
+  1:  {capital_rate: 0.020, el_rate: 0.0001}
+  2:  {capital_rate: 0.025, el_rate: 0.0002}
+  3:  {capital_rate: 0.030, el_rate: 0.0004}
+  4:  {capital_rate: 0.040, el_rate: 0.0008}
+  5:  {capital_rate: 0.050, el_rate: 0.0015}
+  6:  {capital_rate: 0.060, el_rate: 0.0025}
+  7:  {capital_rate: 0.075, el_rate: 0.0045}
+  8:  {capital_rate: 0.090, el_rate: 0.0080}
+  9:  {capital_rate: 0.110, el_rate: 0.0140}
+  10: {capital_rate: 0.140, el_rate: 0.0250}
+
+# --- Pricing floors (Loan Pricing Policy section 3)
+#     Minimum spread over Term SOFR, in bp, by rating band, for tenor up to 3 years (LPP 3.2)
+spread_floor_bp:
+  "1-2": 60
+  "3-4": 85
+  "5-6": 110
+  "7-8": 160
+  "9-10": 250
+#     Tenor add-ons (LPP 3.3): added to the floor above
+tenor_addon_bp:
+  - {max_tenor: 3, addon: 0}    # tenor <= 3 years
+  - {max_tenor: 5, addon: 15}   # 3 < tenor <= 5
+  - {max_tenor: 7, addon: 30}   # 5 < tenor <= 7
+
+min_upfront_fee_bp: 15   # LPP 4.1, new facilities
+max_tenor_years:
+  revolver: 5            # LPP 5.3
+  term_loan: 7           # LPP 5.4
+
+# --- Input validation for the public demo (Price Deal flow step 2)
+validation:
+  size_min: 1000000
+  size_max: 2000000000
+  tenor_min: 1
+  tenor_max: 7
+  spread_min_bp: 0
+  spread_max_bp: 1000
+  fee_min_bp: 0
+  fee_max_bp: 200
+daily_request_cap: 50
+
+# --- Products (P2) and indicative annual revenue for cross-sell (RAROC Methodology 7.3)
+products:
+  - {name: "Lending",                low: null,    high: null}
+  - {name: "Transaction Banking",    low: 400000,  high: 1500000}
+  - {name: "Rates & FX Hedging",     low: 300000,  high: 2000000}
+  - {name: "DCM",                    low: 500000,  high: 2000000}
+  - {name: "ECM",                    low: 1000000, high: 4000000}
+  - {name: "M&A Advisory",           low: 1500000, high: 6000000}
+
+# --- Clause references used in flow outputs
+clauses:
+  approved: "AM 1.1"
+  segment_head: "AM 1.2"
+  committee_low: "AM 1.3"
+  committee_relationship: "AM 1.4"
+  exception_route: "AM 2.1"
+  spread_floor: "LPP 3.2"
+  upfront_fee: "LPP 4.1"
+  revolver_tenor: "LPP 5.3"
+  term_loan_tenor: "LPP 5.4"
+  exception: "LPP 6.2"

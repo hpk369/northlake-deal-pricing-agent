@@ -1,0 +1,51 @@
+client_id,name,segment,rating,products_held,rel_revenue,rel_cost,rel_el,rel_capital,el_rate,capital_rate
+C-0101,Harrowgate Foods Ltd.,Mid-Market,4,Lending,877000,376000,49000,4100000,0.0008,0.04
+C-0102,Gullwing Logistics Inc.,Mid-Market,7,Lending;DCM,1416000,570000,174000,4820000,0.0045,0.075
+C-0103,Inverness Row Foods Ltd.,Mid-Market,5,Lending;ECM;M&A Advisory;Transaction Banking,692000,284000,44000,2450000,0.0015,0.05
+C-0104,Yarrow Industries Inc.,Large Corporate,7,Lending;M&A Advisory,1641000,732000,336000,9340000,0.0045,0.075
+C-0105,Birchmount Energy Corp.,Large Corporate,5,Lending;DCM;Rates & FX Hedging,6877000,3056000,337000,18740000,0.0015,0.05
+C-0106,Northvale Logistics Inc.,Mid-Market,6,Lending;Transaction Banking,731000,353000,57000,2260000,0.0025,0.06
+C-0107,Stonebridge Foods Ltd.,Mid-Market,7,Lending;DCM;M&A Advisory;Rates & FX Hedging,1548000,752000,123000,3420000,0.0045,0.075
+C-0108,Cedarline Financial Group,FI,6,Lending;DCM;Transaction Banking,2315000,1042000,359000,14370000,0.0025,0.06
+C-0109,Corvane Precision Components Ltd.,Mid-Market,5,Lending,500000,250000,60000,4000000,0.0015,0.05
+C-0110,Juniper Bay Industries Inc.,Large Corporate,3,Lending;DCM;ECM;M&A Advisory;Transaction Banking,1411000,660000,57000,7070000,0.0004,0.03
+C-0111,Moraine Foods Ltd.,Mid-Market,5,Lending,654000,268000,52000,2900000,0.0015,0.05
+C-0112,Thistledown Manufacturing Ltd.,Mid-Market,5,Lending,2887000,1396000,102000,5670000,0.0015,0.05
+C-0113,Driftwood Holdings Inc.,Large Corporate,7,Lending;ECM;M&A Advisory;Rates & FX Hedging;Transaction Banking,2967000,1391000,536000,14890000,0.0045,0.075
+C-0114,Zephyr Lake Distribution Inc.,Mid-Market,4,Lending;Transaction Banking,531000,248000,40000,3330000,0.0008,0.04
+C-0115,Amberly Holdings Inc.,Large Corporate,8,Lending;M&A Advisory;Transaction Banking,5099000,2061000,692000,12980000,0.008,0.09
+C-0116,Pelham Ridge Insurance Co.,FI,4,Lending,2690000,1198000,76000,6370000,0.0008,0.04
+C-0117,Quillfeather Industrial Holdings Ltd.,Large Corporate,5,Lending;Transaction Banking;Rates & FX Hedging;DCM;M&A Advisory,6000000,2400000,250000,14000000,0.0015,0.05
+C-0118,Brackenridge Foods Ltd.,Mid-Market,5,Lending;DCM;M&A Advisory,2549000,1022000,114000,6320000,0.0015,0.05
+C-0119,Elmstead Logistics Inc.,Mid-Market,3,Lending;DCM;ECM;M&A Advisory;Rates & FX Hedging,623000,259000,24000,2940000,0.0004,0.03
+C-0120,Eastvale Manufacturing Ltd.,Mid-Market,5,Lending;M&A Advisory,916000,446000,53000,2950000,0.0015,0.05
+C-0121,Upland Manufacturing Ltd.,Mid-Market,6,Lending;Rates & FX Hedging,1156000,502000,61000,2430000,0.0025,0.06
+C-0122,Granite Shore Logistics Inc.,Mid-Market,8,Lending;Rates & FX Hedging,2538000,1167000,255000,4790000,0.008,0.09
+C-0123,Orchard Hill Energy Corp.,Large Corporate,6,Lending,8253000,3967000,482000,19280000,0.0025,0.06
+C-0124,Verdance Holdings Inc.,Large Corporate,3,Lending;DCM,6565000,3223000,105000,13070000,0.0004,0.03
+C-0125,Aldergrove Packaging Corp.,Mid-Market,5,Lending;DCM;ECM;M&A Advisory;Transaction Banking,2899000,1349000,117000,6510000,0.0015,0.05
+C-0126,Oakhaven Packaging Corp.,Mid-Market,2,Lending;Transaction Banking,646000,316000,12000,2590000,0.0002,0.025
+C-0127,Millbrook Holdings Inc.,Large Corporate,7,Lending;M&A Advisory;Rates & FX Hedging,4016000,1749000,456000,12670000,0.0045,0.075
+C-0128,Tamarack Valley Foods Corp.,Mid-Market,5,Lending;Rates & FX Hedging,1200000,600000,100000,6000000,0.0015,0.05
+C-0129,Foxbury Industries Inc.,Large Corporate,5,Lending;DCM;M&A Advisory;Rates & FX Hedging;Transaction Banking,2732000,1128000,238000,13200000,0.0015,0.05
+C-0130,Kestrel Insurance Co.,FI,5,Lending;DCM;M&A Advisory;Transaction Banking,2374000,1064000,234000,13020000,0.0015,0.05
+C-0131,Silverbirch Foods Ltd.,Mid-Market,3,Lending;ECM;Rates & FX Hedging,1049000,514000,21000,2660000,0.0004,0.03
+C-0132,Redfern Distribution Inc.,Mid-Market,2,Lending;DCM;ECM;Transaction Banking,387000,158000,16000,3430000,0.0002,0.025
+C-0133,Bramblewood Capital Partners Fund IV LP,Sponsor,6,Lending;M&A Advisory,1800000,800000,200000,7000000,0.0025,0.06
+C-0134,Coldwater Insurance Co.,FI,6,Lending,2138000,991000,160000,6390000,0.0025,0.06
+C-0135,Whitlock Rail Corp.,Large Corporate,7,Lending;DCM;M&A Advisory;Rates & FX Hedging;Transaction Banking,5562000,2446000,686000,19060000,0.0045,0.075
+C-0136,Lockhart Trust Co.,FI,6,Lending;ECM;M&A Advisory;Rates & FX Hedging,2762000,1172000,314000,12550000,0.0025,0.06
+C-0137,Quarry Point Resources Ltd.,Large Corporate,4,Lending,3180000,1448000,173000,14430000,0.0008,0.04
+C-0138,Calloway Distribution Inc.,Mid-Market,6,Lending,1145000,506000,122000,4900000,0.0025,0.06
+C-0139,Nettlefield Equity Fund III LP,Sponsor,3,Lending;DCM;ECM;M&A Advisory;Transaction Banking,1502000,708000,31000,3890000,0.0004,0.03
+C-0140,Larchmere Distribution Inc.,Mid-Market,3,Lending;DCM;ECM;M&A Advisory;Transaction Banking,1656000,689000,34000,4210000,0.0004,0.03
+C-0141,Dunmore Manufacturing Ltd.,Mid-Market,3,Lending,523000,218000,26000,3310000,0.0004,0.03
+C-0142,Halvorsen Marine Logistics Inc.,Large Corporate,3,Lending;Rates & FX Hedging;Transaction Banking;DCM,4200000,1850000,90000,9500000,0.0004,0.03
+C-0143,Saltmarsh Distribution Inc.,Mid-Market,6,Lending;ECM;M&A Advisory;Rates & FX Hedging,1907000,806000,137000,5490000,0.0025,0.06
+C-0144,Fernhollow Asset Management Inc.,FI,5,Lending;DCM;ECM;M&A Advisory;Transaction Banking,4802000,2364000,236000,13090000,0.0015,0.05
+C-0145,Ironwood Capital Partners LP,Sponsor,6,Lending,2030000,895000,116000,4620000,0.0025,0.06
+C-0146,Westbrook Packaging Corp.,Mid-Market,5,Lending;DCM;Rates & FX Hedging,2345000,1150000,119000,6630000,0.0015,0.05
+C-0147,Hearthstone Logistics Inc.,Mid-Market,3,Lending,1042000,424000,34000,4260000,0.0004,0.03
+C-0148,Ashcombe Resources Ltd.,Large Corporate,5,Lending;DCM,2818000,1382000,136000,7540000,0.0015,0.05
+C-0149,Maplecroft Capital Partners LP,Sponsor,3,Lending;DCM;M&A Advisory;Rates & FX Hedging,2404000,1001000,71000,8820000,0.0004,0.03
+C-0150,Glenridge Growth Partners LP,Sponsor,3,Lending;DCM;ECM;Rates & FX Hedging,1768000,755000,58000,7260000,0.0004,0.03

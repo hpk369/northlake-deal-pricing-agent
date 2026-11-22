@@ -1,0 +1,11 @@
+case_id,purpose,clientId,facilityType,sizeUSD,tenorYears,spreadBp,upfrontFeeBp,commitFeeBp,exp_status,exp_dealRAROC,exp_relRAROC,exp_decision,exp_rowStatus,exp_policyClause,exp_revenueNeeded
+F01,Approved (headline demo),C-0142,revolver,50000000,3,125,25,25,ok,0.1600,0.2273,Approved,Approved,AM 1.1,0.0
+F02,Approved (second client),C-0124,revolver,150000000,5,120,30,25,ok,0.1503,0.2227,Approved,Approved,AM 1.1,0.0
+F03,Segment head,C-0117,term_loan,75000000,5,140,20,25,ok,0.1428,0.2189,Route to segment head,Pending,AM 1.2,0.0
+F04,Committee via relationship,C-0128,term_loan,100000000,4,135,25,25,ok,0.1395,0.1089,Route to pricing committee,Pending,AM 1.4,754167
+F05,"Committee, deal < 12%",C-0133,revolver,60000000,3,115,20,25,ok,0.0558,0.0944,Route to pricing committee,Pending,AM 1.3,981667
+F06,"Committee, thin relationship",C-0109,revolver,40000000,3,130,20,25,ok,0.0860,0.0603,Route to pricing committee,Pending,AM 1.3,896667
+F07,Spread below floor (LPP 3.2),C-0133,revolver,60000000,3,95,20,25,ok,0.0458,0.0910,Route to pricing committee,Pending,AM 2.1; LPP 3.2; LPP 6.2,1041667
+F08,Revolver tenor too long (LPP 5.3),C-0142,revolver,50000000,6,125,25,25,ok,0.1517,0.2261,Route to pricing committee,Pending,AM 2.1; LPP 5.3; LPP 6.2,0.0
+F09,Invalid input,C-0142,revolver,5000000000,15,125,25,25,invalid,,,Rejected (input),Rejected (input),,
+F10,Unknown client,C-9999,revolver,50000000,3,125,25,25,unknown_client,,,Rejected (input),Rejected (input),,

@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Northlake Deal Pricing Agent · live demo</title>
+<meta name="description" content="Copilot Studio agent that prices corporate loans: deterministic RAROC in Power Automate, policy answers with clause citations, human-in-the-loop approvals, Dataverse audit log. Fictional bank, synthetic data.">
+<style>
+  :root{--ink:#14202e;--muted:#5b6776;--line:#dde3ea;--bg:#f5f7fa;--card:#fff;--accent:#0f5c4d;--accent-soft:#e3f1ed;--warn:#fff6dd;--warn-line:#ecd38a}
+  *{box-sizing:border-box}
+  body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;color:var(--ink);background:var(--bg);line-height:1.5}
+  header{background:var(--ink);color:#fff;padding:14px 24px;display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap}
+  .brand{display:flex;align-items:center;gap:12px}
+  .mark{width:34px;height:34px;border-radius:8px;background:var(--accent);display:grid;place-items:center;font-weight:700}
+  .brand h1{font-size:17px;margin:0;font-weight:600}
+  .brand span{display:block;font-size:12px;color:#b9c4d0}
+  header nav a{color:#fff;text-decoration:none;font-size:14px;border:1px solid #3a4a5c;padding:6px 12px;border-radius:6px;margin-left:6px}
+  header nav a:hover{background:#22344a}
+  .notice{background:var(--warn);border-bottom:1px solid var(--warn-line);padding:8px 24px;font-size:13px}
+  main{display:grid;grid-template-columns:minmax(320px,440px) 1fr;gap:24px;padding:24px;max-width:1400px;margin:0 auto}
+  .panel{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:20px}
+  .panel+.panel{margin-top:16px}
+  h2{font-size:15px;margin:0 0 10px}
+  p{margin:0 0 10px;font-size:14px;color:var(--muted)}
+  .prompt{border:1px solid var(--line);border-radius:8px;padding:10px 12px;margin-bottom:10px}
+  .prompt b{font-size:13px;display:block}
+  .prompt code{display:block;font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:12.5px;color:var(--ink);margin:4px 0 8px;white-space:normal}
+  .prompt .row{display:flex;justify-content:space-between;align-items:center;gap:8px}
+  .tag{font-size:12px;background:var(--accent-soft);color:var(--accent);padding:2px 8px;border-radius:99px}
+  button.copy{font:inherit;font-size:12px;border:1px solid var(--accent);background:#fff;color:var(--accent);border-radius:6px;padding:4px 10px;cursor:pointer}
+  button.copy:hover{background:var(--accent-soft)}
+  ol.steps{margin:0;padding-left:18px;font-size:14px;color:var(--muted)}
+  ol.steps li{margin-bottom:6px}
+  ol.steps b{color:var(--ink)}
+  .chat{background:var(--card);border:1px solid var(--line);border-radius:12px;overflow:hidden;display:flex;flex-direction:column;height:calc(100vh - 150px);min-height:560px;position:sticky;top:24px}
+  .chat .bar{padding:10px 16px;border-bottom:1px solid var(--line);font-size:13px;color:var(--muted)}
+  .chat iframe{border:0;width:100%;flex:1}
+  .chat .empty{flex:1;display:none;place-items:center;padding:24px;text-align:center;color:var(--muted);font-size:14px}
+  footer{text-align:center;font-size:12px;color:var(--muted);padding:8px 24px 28px}
+  footer a{color:var(--muted)}
+  @media (max-width:900px){main{grid-template-columns:1fr;padding:16px}.chat{position:static;height:80vh;min-height:480px;order:-1}}
+</style>
+</head>
+<body>
+<header>
+  <div class="brand">
+    <div class="mark">N</div>
+    <div><h1>Northlake Deal Pricing Agent</h1><span>Copilot Studio · Power Automate · Dataverse</span></div>
+  </div>
+  <nav>
+    <a href="https://github.com/hpk369/northlake-deal-pricing-agent">Code on GitHub</a>
+    <!-- VIDEO: <a href="VIDEO_URL">2-min video</a> -->
+  </nav>
+</header>
+<div class="notice"><b>Northlake Bank is fictional.</b> Every client, figure and policy in this demo is synthetic. Nothing here is real pricing or financial advice.</div>
+
+<main>
+  <section>
+    <div class="panel">
+      <h2>Try a prompt</h2>
+      <p>Copy one into the chat. Client IDs run from <span style="white-space:nowrap">C-0101</span> to <span style="white-space:nowrap">C-0150</span>.</p>
+      <div class="prompt">
+        <b>Price an approved deal</b>
+        <code>Offer C-0142 a $50M 3-year revolver at SOFR + 125 bp with a 25 bp upfront fee</code>
+        <div class="row"><span class="tag">Approved · 16.00%</span><button class="copy">Copy</button></div>
+      </div>
+      <div class="prompt">
+        <b>Price a deal that needs a human</b>
+        <code>Price a $75M 5-year term loan for C-0117 at SOFR + 140 bp, 20 bp upfront</code>
+        <div class="row"><span class="tag">Pending: segment head · 14.28%</span><button class="copy">Copy</button></div>
+      </div>
+      <div class="prompt">
+        <b>Ask the policy</b>
+        <code>What's the minimum spread for a rating-6 client on a 3-year revolver?</code>
+        <div class="row"><span class="tag">LPP 3.2 · SOFR + 110 bp</span><button class="copy">Copy</button></div>
+      </div>
+      <p>Then ask for the status of the request ID it gives you, for example <i>"Status of DR-00012?"</i></p>
+    </div>
+
+    <div class="panel">
+      <h2>How it works</h2>
+      <ol class="steps">
+        <li><b>The agent extracts the terms</b> and asks for anything missing in one question.</li>
+        <li><b>A Power Automate flow does all the maths.</b> Deal and relationship RAROC, pricing floors and the approval matrix are expressions in the flow, never the language model.</li>
+        <li><b>Below the 15% hurdle, a human decides.</b> The deal goes to a Segment Head or the Pricing Committee through Power Automate Approvals. The agent can't approve or override.</li>
+        <li><b>Everything is logged</b> to a Dataverse audit table: inputs, both RAROC figures, policy clause, decision, approver and comment.</li>
+        <li><b>Policy answers cite the clause</b> from three synthetic policy documents.</li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="chat" aria-label="Chat with the agent">
+    <div class="bar">Chat with the agent · no sign-in needed · limited to 50 priced requests a day</div>
+    <iframe id="webchat" title="Northlake Deal Pricing Agent chat" src="https://copilotstudio.microsoft.com/environments/f5c12bb8-d5e7-ebd2-998a-34c5436492f3/bots/craf9_NorthlakeDealPricingAssistant/webchat?__version__=2&amp;enableFileAttachment=true"></iframe>
+    <div class="empty" id="nochat">The chat isn't connected yet.</div>
+  </section>
+</main>
+
+<footer>Portfolio project by <a href="https://github.com/hpk369">hpk369</a> · Northlake Bank is fictional and all data is synthetic.</footer>
+
+<script>
+  document.querySelectorAll('button.copy').forEach(function (b) {
+    b.addEventListener('click', function () {
+      var text = b.closest('.prompt').querySelector('code').textContent;
+      var done = function () { b.textContent = 'Copied'; setTimeout(function () { b.textContent = 'Copy'; }, 1500); };
+      try {
+        navigator.clipboard.writeText(text).then(done, function () { fallback(text); done(); });
+      } catch (e) { fallback(text); done(); }
+    });
+  });
+  function fallback(text) {
+    var t = document.createElement('textarea'); t.value = text; document.body.appendChild(t);
+    t.select(); try { document.execCommand('copy'); } catch (e) {} document.body.removeChild(t);
+  }
+  var f = document.getElementById('webchat');
+  if (f.getAttribute('src').indexOf('REPLACE_') === 0) { f.style.display = 'none'; document.getElementById('nochat').style.display = 'grid'; }
+</script>
+</body>
+</html>
